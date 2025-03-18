@@ -28,15 +28,18 @@
             height: 200px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: block;
+            text-align: center;
         }
         .profile-container {
             text-align: left;
             flex: 1;
         }
         .profile-name {
-            font-size: 1.5em;
+            font-size: 1.2em;
             font-weight: bold;
             color: #ffffff;
+            text-align: center;
         }
         nav {
             background: #333;
@@ -84,10 +87,12 @@
     <header>
         <div class="profile-container">
             <h1>Deepak Kumar Singh</h1>
-            <div class="profile-name">Dr. Deepak K. Singh</div>
             <p>Assistant Manager | Molecular Microbiology | Gene Therapy</p>
         </div>
-        <img src="deepak-profile.jpg" alt="Deepak Kumar Singh" class="profile-img">
+        <div>
+            <img src="deepak-profile.jpg" alt="Deepak Kumar Singh" class="profile-img">
+            <div class="profile-name">Dr. Deepak K. Singh</div>
+        </div>
     </header>
     
     <nav>
