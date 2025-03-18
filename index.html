@@ -18,17 +18,22 @@
             color: white;
             text-align: center;
             padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
         }
         .profile-img {
-            display: block;
-            margin: 20px auto;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
+        .profile-container {
+            text-align: left;
+            flex: 1;
+        }
         .profile-name {
-            text-align: center;
             font-size: 1.5em;
             font-weight: bold;
             color: #ffffff;
@@ -77,10 +82,12 @@
 </head>
 <body>
     <header>
+        <div class="profile-container">
+            <h1>Deepak Kumar Singh</h1>
+            <div class="profile-name">Dr. Deepak K. Singh</div>
+            <p>Assistant Manager | Molecular Microbiology | Gene Therapy</p>
+        </div>
         <img src="deepak-profile.jpg" alt="Deepak Kumar Singh" class="profile-img">
-        <div class="profile-name">Dr. Deepak K. Singh</div>
-        <h1>Deepak Kumar Singh</h1>
-        <p>Assistant Manager | Molecular Microbiology | Gene Therapy</p>
     </header>
     
     <nav>
@@ -91,58 +98,24 @@
             <li><a href="#skills">Technical Skills</a></li>
             <li><a href="#awards">Awards</a></li>
             <li><a href="#publications">Publications</a></li>
+            <li><a href="#conferences">Conferences & Workshops</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
     
     <section id="about">
         <h2>About Me</h2>
-        <p>Assistant Manager in R&D at Micro CRISPR Pvt. Ltd., specializing in molecular microbiology, gene therapy, and antimicrobial resistance.</p>
+        <p>I am a dedicated researcher and scientist with expertise in molecular microbiology, gene therapy, and antimicrobial resistance. My work spans across various domains, including bacterial chromosome stability, host-pathogen interactions, and molecular diagnostics. Currently, I serve as an Assistant Manager in the R&D department at Micro CRISPR Pvt. Ltd., where I focus on developing novel gene therapy solutions. My research interests include exploring DNA repair mechanisms, understanding microbial genomics, and leveraging CRISPR technology for biomedical applications.</p>
     </section>
     
-    <section id="education">
-        <h2>Education</h2>
+    <section id="conferences">
+        <h2>Conferences & Workshops</h2>
         <ul>
-            <li>Ph.D. Molecular Microbiology, Jamia Millia Islamia, New Delhi (2017–2024)</li>
-            <li>M.Sc. Biotechnology, C.S.J.M. University, Kanpur (2012–2014)</li>
-            <li>B.Sc. Biotechnology, C.S.J.M. University, Kanpur (2009–2012)</li>
-        </ul>
-    </section>
-    
-    <section id="experience">
-        <h2>Research Experience</h2>
-        <ul>
-            <li>Assistant Manager, R&D, Micro CRISPR Pvt. Ltd.</li>
-            <li>Senior Research Fellow, MCARS, Jamia Millia Islamia (2019–2024)</li>
-            <li>Junior Research Fellow, MCARS, Jamia Millia Islamia (2017–2019)</li>
-            <li>Junior Research Fellow, ICAR-IVRI, Bareilly (2016–2017)</li>
-            <li>R&D Executive, Panacea Biotec Pvt. Ltd., Mohali (2014–2015)</li>
-            <li>Dissertation Trainee, CSIR-NBRI, Lucknow (2013)</li>
-        </ul>
-    </section>
-    
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <p>Expertise in microbiology, molecular biology, cell biology, and data analysis tools including Prism, FlowJo, ImageJ, and BioRender.</p>
-    </section>
-    
-    <section id="awards">
-        <h2>Fellowships & Awards</h2>
-        <ul>
-            <li>EMBO & DBT International Travel Awards (2022)</li>
-            <li>UGC-SRF (2020–2023)</li>
-            <li>UGC-JRF (2018–2020)</li>
-            <li>GATE-Biotechnology (2015)</li>
-        </ul>
-    </section>
-    
-    <section id="publications">
-        <h2>Publications</h2>
-        <ul>
-            <li>SeqA mediated cohesion modulates efficiency and fidelity of site-specific DNA double-strand break repair in <i>E. coli</i> (Under revision in Communication Biology)</li>
-            <li>Loss of SeqA leads to abnormal cell phenotype and reduced stress gene expression during rapid growth in <i>E. coli</i> (<a href="http://dx.doi.org/10.51470/BCA.2024.24.1-S.3407">Biochemical & Cellular Archives, 2024</a>)</li>
-            <li>Exposure to high dosage of Gold nanoparticles accelerates growth rate by modulating ribosomal protein expression (<a href="https://pubs.acs.org/doi/10.1021/acsnano.3c01973">ACS NANO, 2023</a>)</li>
-            <li>A Saliva-Based RNA Extraction-Free Workflow Integrated with Cas13a for SARS-CoV-2 Detection (<a href="https://doi.org/10.3389/fcimb.2021.632646">Frontiers in Cellular and Infection Microbiology, 2021</a>)</li>
+            <li>Poster presentation at Indo-US International Conference on Antimicrobial Resistance and Human Microbiome (ARHM 2023), THSTI, Faridabad, India.</li>
+            <li>Poster presentation at International Conference on Chromosome Stability, IISER Thiruvananthapuram, Kerala (2022).</li>
+            <li>Poster presentation at EMBO-Dynamic Kinetochore Conference, Oslo, Norway (2022).</li>
+            <li>Attended B4 Bio-Imaging Workshop by The Laxmi Mittal & Family South Asia Institute and Harvard University, IISER Pune (2019).</li>
+            <li>Attended 3rd Meeting on Molecular Microbiology (M3) at Centre for DNA Fingerprinting & Diagnostics, Hyderabad (2019).</li>
         </ul>
     </section>
     
