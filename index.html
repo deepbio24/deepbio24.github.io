@@ -1,139 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Deepak K. Singh</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        nav {
-            background: #fff;
-            padding: 15px 20px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-        .hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 90vh;
-            background: linear-gradient(45deg, #0073e6, #00c6ff);
-            color: white;
-            text-align: center;
-            padding: 50px;
-        }
-        .hero img {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            margin-right: 30px;
-        }
-        .hero-content {
-            max-width: 600px;
-        }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
-        h2 {
-            border-bottom: 2px solid #0073e6;
-            padding-bottom: 5px;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #333;
-            color: white;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Deepak K. Singh</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      background-color: #ffffff;
+      color: #111;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+    header img {
+      width: 160px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    header h1 {
+      font-size: 28px;
+      margin: 5px 0;
+    }
+    header p {
+      font-size: 16px;
+      margin: 0;
+    }
+    nav {
+      text-align: center;
+      padding: 10px 0;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #0073e6;
+      font-weight: bold;
+    }
+    section {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    section h2 {
+      font-size: 20px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+    footer {
+      text-align: center;
+      font-size: 14px;
+      padding: 30px 0;
+      color: #888;
+    }
+    ul {
+      padding-left: 20px;
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Research</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    
-    <div class="hero">
-        <img src="deepak-profile.jpg" alt="Dr. Deepak K. Singh">
-        <div class="hero-content">
-            <h1>Dr. Deepak K. Singh</h1>
-            <p>Assistant Manager | Molecular Microbiology | Gene Therapy</p>
-        </div>
-    </div>
-    
-    <div class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I am a dedicated researcher specializing in molecular microbiology, gene therapy, and antimicrobial resistance. Currently, I serve as an Assistant Manager at Micro CRISPR Pvt. Ltd., focusing on developing gene therapy solutions. My research involves DNA repair mechanisms, microbial genomics, and CRISPR technology for biomedical applications.</p>
-        </section>
-        
-        <section id="education">
-            <h2>Education</h2>
-            <ul>
-                <li>Ph.D. Molecular Microbiology, Jamia Millia Islamia (2017–2024)</li>
-                <li>M.Sc. Biotechnology, C.S.J.M. University (2012–2014)</li>
-                <li>B.Sc. Biotechnology, C.S.J.M. University (2009–2012)</li>
-            </ul>
-        </section>
-        
-        <section id="experience">
-            <h2>Research Experience</h2>
-            <ul>
-                <li>Senior Scientist, R&D, Micro CRISPR Pvt. Ltd.</li>
-                <li>Senior Research Fellow, MCARS, Jamia Millia Islamia (2019–2024)</li>
-                <li>Junior Research Fellow, ICAR-IVRI, Bareilly (2016–2017)</li>
-            </ul>
-        </section>
-        
-        <section id="publications">
-            <h2>Publications</h2>
-            <ul>
-                <li>SeqA mediated cohesion modulates efficiency and fidelity of site-specific DNA double-strand break repair in <i>E. coli</i> (Under revision in Communication Biology)</li>
-                <li>Loss of SeqA leads to abnormal cell phenotype and reduced stress gene expression (<a href="http://dx.doi.org/10.51470/BCA.2024.24.1-S.3407">Biochemical & Cellular Archives, 2024</a>)</li>
-                <li>Exposure to Gold nanoparticles accelerates growth rate by modulating ribosomal protein expression (<a href="https://pubs.acs.org/doi/10.1021/acsnano.3c01973">ACS NANO, 2023</a>)</li>
-            </ul>
-        </section>
-        
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:deepbio24@gmail.com">deepbio24@gmail.com</a></p>
-            <p>Phone: +91 8765022825</p>
-        </section>
-    </div>
-    
-    <footer>
-        <p>© 2025 Dr. Deepak K. Singh | All Rights Reserved</p>
-    </footer>
+  <header>
+    <img src="Deepak-profile.jpg" alt="Dr. Deepak K. Singh">
+    <h1>Dr. Deepak K. Singh</h1>
+    <p>Senior Scientist, Micro CRISPR Pvt. Ltd.</p>
+    <p>Molecular Microbiology | Gene Therapy | Antimicrobial Resistance</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Research</a>
+    <a href="#publications">Publications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a dedicated researcher and scientist with a Ph.D. in Molecular Microbiology from Jamia Millia Islamia. Currently, I work as an Assistant Manager in R&D at Micro CRISPR Pvt. Ltd., New Delhi. My focus lies in gene therapy, bacterial chromosome dynamics, and antimicrobial resistance. My research emphasizes DNA repair mechanisms, CRISPR diagnostics, and cell-based assays for translational microbiology.</p>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ul>
+      <li>Ph.D. Molecular Microbiology, Jamia Millia Islamia (2017–2024)</li>
+      <li>M.Sc. Biotechnology, C.S.J.M. University (2012–2014)</li>
+      <li>B.Sc. Biotechnology, C.S.J.M. University (2009–2012)</li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <h2>Research Experience</h2>
+    <ul>
+      <li>Senior Scientist, Micro CRISPR Pvt. Ltd., New Delhi</li>
+      <li>Senior Research Fellow, MCARS, Jamia Millia Islamia (2019–2024)</li>
+      <li>JRF, ICAR-IVRI, Bareilly (2016–2017)</li>
+    </ul>
+  </section>
+
+  <section id="publications">
+    <h2>Publications</h2>
+    <ul>
+      <li>SeqA mediated cohesion modulates DNA repair in <i>E. coli</i> (Under revision, <i>Communication Biology</i>)</li>
+      <li>Loss of SeqA leads to abnormal cell phenotype in <i>E. coli</i> (<a href="http://dx.doi.org/10.51470/BCA.2024.24.1-S.3407">BCA, 2024</a>)</li>
+      <li>Gold nanoparticle exposure modulates ribosomal protein expression (<a href="https://pubs.acs.org/doi/10.1021/acsnano.3c01973">ACS NANO, 2023</a>)</li>
+      <li>Cas13a-based SARS-CoV-2 detection (<a href="https://doi.org/10.3389/fcimb.2021.632646">Frontiers, 2021</a>)</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:deepbio24@gmail.com">deepbio24@gmail.com</a></p>
+    <p>Phone: +91 8765022825</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Dr. Deepak K. Singh</p>
+  </footer>
 </body>
 </html>
