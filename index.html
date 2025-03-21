@@ -3,77 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deepak Kumar Singh</title>
+    <title>Dr. Deepak K. Singh</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
         }
-        header {
-            background: linear-gradient(45deg, #0073e6, #00c6ff);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-        }
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            display: block;
-            text-align: center;
-        }
-        .profile-container {
-            text-align: left;
-            flex: 1;
-        }
-        .profile-name {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #ffffff;
-            text-align: center;
-        }
         nav {
-            background: #333;
-            color: white;
-            padding: 10px;
+            background: #fff;
+            padding: 15px 20px;
             text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
         nav ul li {
             display: inline;
             margin: 0 15px;
         }
         nav ul li a {
-            color: white;
             text-decoration: none;
+            color: #333;
             font-weight: bold;
         }
-        section {
-            max-width: 800px;
-            margin: 20px auto;
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            background: linear-gradient(45deg, #0073e6, #00c6ff);
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        .hero img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin-right: 30px;
+        }
+        .hero-content {
+            max-width: 600px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
             padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         h2 {
-            color: #0073e6;
-        }
-        a {
-            color: #0073e6;
-            text-decoration: none;
+            border-bottom: 2px solid #0073e6;
+            padding-bottom: 5px;
         }
         footer {
             text-align: center;
@@ -84,54 +74,66 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="profile-container">
-            <h1>Deepak Kumar Singh</h1>
-            <p>Assistant Manager | Molecular Microbiology | Gene Therapy</p>
-        </div>
-        <div>
-            <img src="deepak-profile.jpg" alt="Deepak Kumar Singh" class="profile-img">
-            <div class="profile-name">Dr. Deepak K. Singh</div>
-        </div>
-    </header>
-    
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#education">Education</a></li>
-            <li><a href="#experience">Research Experience</a></li>
-            <li><a href="#skills">Technical Skills</a></li>
-            <li><a href="#awards">Awards</a></li>
+            <li><a href="#experience">Research</a></li>
             <li><a href="#publications">Publications</a></li>
-            <li><a href="#conferences">Conferences & Workshops</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
     
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a dedicated researcher and scientist with expertise in molecular microbiology, gene therapy, and antimicrobial resistance. My work spans across various domains, including bacterial chromosome stability, host-pathogen interactions, and molecular diagnostics. Currently, I serve as an Assistant Manager in the R&D department at Micro CRISPR Pvt. Ltd., where I focus on developing novel gene therapy solutions. My research interests include exploring DNA repair mechanisms, understanding microbial genomics, and leveraging CRISPR technology for biomedical applications.</p>
-    </section>
+    <div class="hero">
+        <img src="deepak-profile.jpg" alt="Dr. Deepak K. Singh">
+        <div class="hero-content">
+            <h1>Dr. Deepak K. Singh</h1>
+            <p>Assistant Manager | Molecular Microbiology | Gene Therapy</p>
+        </div>
+    </div>
     
-    <section id="conferences">
-        <h2>Conferences & Workshops</h2>
-        <ul>
-            <li>Poster presentation at Indo-US International Conference on Antimicrobial Resistance and Human Microbiome (ARHM 2023), THSTI, Faridabad, India.</li>
-            <li>Poster presentation at International Conference on Chromosome Stability, IISER Thiruvananthapuram, Kerala (2022).</li>
-            <li>Poster presentation at EMBO-Dynamic Kinetochore Conference, Oslo, Norway (2022).</li>
-            <li>Attended B4 Bio-Imaging Workshop by The Laxmi Mittal & Family South Asia Institute and Harvard University, IISER Pune (2019).</li>
-            <li>Attended 3rd Meeting on Molecular Microbiology (M3) at Centre for DNA Fingerprinting & Diagnostics, Hyderabad (2019).</li>
-        </ul>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:deepbio24@gmail.com">deepbio24@gmail.com</a></p>
-        <p>Phone: +91 8765022825</p>
-    </section>
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a dedicated researcher specializing in molecular microbiology, gene therapy, and antimicrobial resistance. Currently, I serve as an Assistant Manager at Micro CRISPR Pvt. Ltd., focusing on developing gene therapy solutions. My research involves DNA repair mechanisms, microbial genomics, and CRISPR technology for biomedical applications.</p>
+        </section>
+        
+        <section id="education">
+            <h2>Education</h2>
+            <ul>
+                <li>Ph.D. Molecular Microbiology, Jamia Millia Islamia (2017–2024)</li>
+                <li>M.Sc. Biotechnology, C.S.J.M. University (2012–2014)</li>
+                <li>B.Sc. Biotechnology, C.S.J.M. University (2009–2012)</li>
+            </ul>
+        </section>
+        
+        <section id="experience">
+            <h2>Research Experience</h2>
+            <ul>
+                <li>Senior Scientist, R&D, Micro CRISPR Pvt. Ltd.</li>
+                <li>Senior Research Fellow, MCARS, Jamia Millia Islamia (2019–2024)</li>
+                <li>Junior Research Fellow, ICAR-IVRI, Bareilly (2016–2017)</li>
+            </ul>
+        </section>
+        
+        <section id="publications">
+            <h2>Publications</h2>
+            <ul>
+                <li>SeqA mediated cohesion modulates efficiency and fidelity of site-specific DNA double-strand break repair in <i>E. coli</i> (Under revision in Communication Biology)</li>
+                <li>Loss of SeqA leads to abnormal cell phenotype and reduced stress gene expression (<a href="http://dx.doi.org/10.51470/BCA.2024.24.1-S.3407">Biochemical & Cellular Archives, 2024</a>)</li>
+                <li>Exposure to Gold nanoparticles accelerates growth rate by modulating ribosomal protein expression (<a href="https://pubs.acs.org/doi/10.1021/acsnano.3c01973">ACS NANO, 2023</a>)</li>
+            </ul>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:deepbio24@gmail.com">deepbio24@gmail.com</a></p>
+            <p>Phone: +91 8765022825</p>
+        </section>
+    </div>
     
     <footer>
-        <p>© 2025 Deepak Kumar Singh | All Rights Reserved</p>
+        <p>© 2025 Dr. Deepak K. Singh | All Rights Reserved</p>
     </footer>
 </body>
 </html>
