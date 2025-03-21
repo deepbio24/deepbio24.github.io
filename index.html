@@ -18,13 +18,30 @@
       padding: 60px 20px 20px;
       background: url('my_plot.png') no-repeat center center;
       background-size: cover;
+      position: relative;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.5); /* Light blur effect */
+      backdrop-filter: blur(8px);
+      z-index: 1;
+    }
+    header * {
+      position: relative;
+      z-index: 2;
     }
     header img {
       width: 200px;
-      height: 250px;
+      height: 260px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 15px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Depth effect */
     }
     header h1 {
       font-size: 28px;
@@ -69,7 +86,8 @@
 <body>
   <header>
     <img src="deepak-profile.jpg" alt="Dr. Deepak K. Singh">
-    <p><a href="DKS-CV.pdf" target="_blank">Curriculum Vitae</a></p>
+    $1
+    <p><a href="DKS-CV.pdf" target="_blank">Download CV</a></p>
     <p>Senior Scientist, Micro CRISPR Pvt. Ltd.</p>
     <p>Molecular Microbiology | Gene Therapy | Antimicrobial Resistance</p>
   </header>
