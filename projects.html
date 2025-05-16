@@ -30,23 +30,19 @@
       display: flex;
       flex-direction: column;
       gap: 40px;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       padding: 40px 20px;
     }
-    .project {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    .project img {
-      width: 140px;
-      height: 140px;
-      object-fit: contain;
-    }
     .project-description {
       flex: 1;
+      max-width: 800px;
+      margin: auto;
+    }
+    .project img {
+      width: 300px;
+      height: 300px;
+      object-fit: contain;
     }
     footer {
       text-align: center;
@@ -59,29 +55,64 @@
 </head>
 <body>
   <header>
-    <h1>Projects</h1>
-    <p>Key research projects I've worked on</p>
+    <h1>Project</h1>
+    <p>Key research contribution</p>
   </header>
 
   <div class="project-container" style="border-top: 1px solid #ccc; padding-top: 160px;">
-    </div>
+    <div class="project-description">
+      <h3>Research Question</h3>
+      <p><strong>Does SeqA-mediated sister chromatid cohesion modulate the efficiency and fidelity of homologous recombination-mediated DSB repair by influencing the spatial proximity of homologous sequences?</strong></p>
+      <p>We investigate whether prolonged chromatid cohesion at 'snap' loci facilitates faster and more accurate homology search during DSB repair compared to 'non-snap' loci with rapid segregation.</p>
 
-    <div class="project" style="flex-direction: column; align-items: center; text-align: left; border-bottom: 1px solid #eee; padding-bottom: 20px;">
-  <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 20px;">
-    <img src="project2-icon1.png" alt="Project 2 Icon 1" style="width: 300px; height: 300px; object-fit: contain;">
-    <img src="project2-icon2.png" alt="Project 2 Icon 2" style="width: 300px; height: 300px; object-fit: contain;">
-  </div>
-  <div class="project-description" style="max-width: 800px;">
-        <h3>SeqA Mediated DNA Repair Modulation</h3>
-        <p>This study explores how sister loci cohesion duration in <i>E. coli</i> affects homologous recombination (HR)-mediated DNA double-strand break (DSB) repair efficiency and fidelity. The <i>E. coli</i> chromosome exhibits prolonged cohesion at snap loci on the right replichore, regulated by SeqA. DSBs induced at the snap locus (gln) resulted in higher cell survival compared to the non-snap locus (dnaB), attributed to faster repair, as indicated by earlier restoration of locus copy number and shorter RecA-GFP lifespan. Time-lapse imaging revealed longer and more stable RecA filaments at gln compared to dnaB, which were compromised in ΔseqA strains. Mutation accumulation analysis showed higher mutation frequencies at dnaB under normal conditions and in the presence of sub-MIC ciprofloxacin, suggesting lower repair fidelity at non-snap loci. Additionally, in silico analysis of 94 natural <i>E. coli</i> isolates revealed higher sequence conservation at snap loci, supporting the hypothesis that prolonged sister loci cohesion enhances repair efficiency and maintains genomic integrity. These findings demonstrate that locus-specific cohesion duration plays a crucial role in determining the kinetics, fidelity, and outcome of HR-mediated DSB repair, with broader implications for genome stability and mutation accumulation.</p>
+      <h3>Key Findings</h3>
+      <ul>
+        <li>DSBs at snap loci (e.g., <i>gln</i>) showed significantly higher survival than non-snap loci (e.g., <i>dnaB</i>).</li>
+        <li>SeqA deletion eliminated the repair advantage at snap loci, confirming its critical role in cohesion.</li>
+        <li>Time-lapse imaging showed faster RecA-GFP disappearance at <i>gln</i>, indicating rapid and efficient repair.</li>
+        <li>Longer and brighter RecA filaments formed at snap loci, supporting enhanced homology search efficiency.</li>
+        <li>RecB dependency confirmed homologous recombination as the repair mechanism.</li>
+      </ul>
+
+      <!-- Result 1 -->
+      <div style="text-align: center; margin: 40px 0;">
+        <img src="Result 1.png" alt="Result 1" style="max-width: 100%; height: auto;">
+        <p style="font-size: 14px; color: #555; max-width: 700px; margin: auto;">
+          <strong>Figure 1:</strong> Repair kinetics and survival comparison between <i>gln</i> (snap) and <i>dnaB</i> (non-snap) loci. DSB induction at <i>gln</i> showed significantly higher survival, with accelerated restoration of copy number and decreased RecA-GFP lifespan.
+        </p>
+      </div>
+
+      <!-- Result 2 -->
+      <div style="text-align: center; margin: 40px 0;">
+        <img src="Result 2.png" alt="Result 2" style="max-width: 100%; height: auto;">
+        <p style="font-size: 14px; color: #555; max-width: 700px; margin: auto;">
+          <strong>Figure 2:</strong> Time-lapse imaging of RecA filament dynamics post DSB induction. Snap loci support rapid filament resolution; non-snap loci show delayed RecA clearance and fragmented filament structures.
+        </p>
+      </div>
+
+      <!-- Result 3 -->
+      <div style="text-align: center; margin: 40px 0;">
+        <img src="Result 3.png" alt="Result 3" style="max-width: 100%; height: auto;">
+        <p style="font-size: 14px; color: #555; max-width: 700px; margin: auto;">
+          <strong>Figure 3:</strong> Fluorescent micrographs show stronger, extended RecA filaments at <i>gln</i> compared to compact foci at <i>dnaB</i>, confirming spatial differences in filament stability and repair efficiency.
+        </p>
+      </div>
+
+      <!-- Result 4 -->
+      <div style="text-align: center; margin: 40px 0;">
+        <img src="Result 4.png" alt="Result 4" style="max-width: 100%; height: auto;">
+        <p style="font-size: 14px; color: #555; max-width: 700px; margin: auto;">
+          <strong>Figure 4:</strong> Schematic model summarizing how SeqA-mediated chromatid cohesion promotes efficient homology search and faithful HR-based DSB repair at snap loci.
+        </p>
       </div>
     </div>
-
-    
-    </div>
   </div>
 
-  <footer>
+  <div style="text-align: center; margin-top: 40px;">
+  <a href="index.html" style="display: inline-block; padding: 10px 20px; background-color: #0073e6; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold;">Back to Home</a>
+</div>
+
+<footer>
     <p>© 2025 Dr. Deepak K. Singh | All rights reserved</p>
   </footer>
 </body>
