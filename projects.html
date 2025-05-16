@@ -3,41 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project - Dr. Deepak K. Singh</title>
+  <title>SeqA Project - Dr. Deepak K. Singh</title>
   <style>
     body {
-      font-family: Georgia, serif;
+      font-family: 'Georgia', serif;
       margin: 0;
       padding: 0;
       background-color: #fff;
       color: #111;
       line-height: 1.6;
     }
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 1000;
-      text-align: center;
-      padding: 60px 20px 20px;
+    .hero {
+      position: relative;
+      height: 350px;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('Result 4.png') center/cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      padding: 40px;
+      color: white;
     }
-    header h1 {
-      font-size: 28px;
+    .hero h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+    .hero p {
+      font-size: 18px;
+      margin-top: 5px;
     }
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
-      padding: 180px 20px 40px;
+      padding: 40px 20px;
     }
     blockquote {
-      background: #f9f9f9;
-      padding: 15px;
-      border-left: 4px solid #0073e6;
+      background: #f0f8ff;
+      padding: 15px 20px;
+      border-left: 5px solid #0073e6;
       font-style: italic;
-      margin: 20px 0;
+      margin: 30px 0;
+    }
+    .two-column {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+    .two-column > div {
+      flex: 1 1 45%;
     }
     .figure {
       text-align: center;
@@ -45,7 +56,8 @@
     }
     .figure img {
       max-width: 100%;
-      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     }
     .figure p {
       font-size: 14px;
@@ -53,16 +65,17 @@
       max-width: 700px;
       margin: auto;
     }
-    footer {
-      text-align: center;
-      font-size: 14px;
-      padding: 30px 0;
-      background-color: #000;
-      color: #fff;
+    .quote-block {
+      font-style: italic;
+      font-size: 20px;
+      color: #333;
+      border-left: 5px solid #0073e6;
+      padding-left: 15px;
+      margin: 50px 0;
     }
     .back-button {
       text-align: center;
-      margin: 40px 0;
+      margin: 60px 0 30px;
     }
     .back-button a {
       display: inline-block;
@@ -73,55 +86,77 @@
       border-radius: 5px;
       font-weight: bold;
     }
+    footer {
+      text-align: center;
+      font-size: 14px;
+      padding: 30px 0;
+      background-color: #000;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>SeqA-Mediated Cohesion Enhances DSB Repair Efficiency</h1>
-    <p><em>Homologous recombination repair is spatially influenced by chromosomal organization in E. coli</em></p>
-  </header>
+  <div class="hero">
+    <div>
+      <h1>Spatial Control of DNA Repair by SeqA</h1>
+      <p>Precision homology search guided by chromosomal organization</p>
+    </div>
+  </div>
 
   <div class="container">
+    <div class="figure">
+      <img src="Result 4.png" alt="Graphical Abstract">
+      <p><strong>Graphical Summary:</strong> SeqA-mediated cohesion enhances repair fidelity by ensuring sister chromatid proximity at snap loci.</p>
+    </div>
+
     <h2>Research Hypothesis</h2>
     <blockquote>
       Does SeqA-mediated sister chromatid cohesion modulate the efficiency and fidelity of HR-mediated DSB repair by influencing the spatial proximity of homologous sequences?
     </blockquote>
 
     <h2>Background</h2>
-    <p>In E. coli, certain chromosomal loci called “snap loci” exhibit prolonged post-replication cohesion. We hypothesize that this cohesion facilitates faster and more accurate homologous recombination repair by spatially aligning sister chromatids.</p>
+    <p>In E. coli, certain chromosomal loci known as “snap loci” exhibit prolonged post-replication cohesion. We hypothesize that this spatial proximity facilitates rapid and accurate homologous recombination repair compared to non-snap loci that segregate early.</p>
 
     <h2>Experimental Design</h2>
-    <ul>
-      <li>Used I-SceI system to induce site-specific DSBs at snap (<i>gln</i>) and non-snap (<i>dnaB</i>) loci.</li>
-      <li>Tracked survival via CFUs and monitored RecA-GFP dynamics through time-lapse microscopy.</li>
-    </ul>
-
-    <h2>Key Findings</h2>
-    <ul>
-      <li><strong>Higher survival</strong> observed at snap loci (<i>gln</i>) vs. non-snap loci (<i>dnaB</i>).</li>
-      <li>SeqA knockout abolishes this repair advantage, confirming its cohesion role.</li>
-      <li>RecA filaments at snap loci are brighter, longer, and resolve faster.</li>
-      <li>HR is RecB-dependent at both loci, validating the repair pathway.</li>
-    </ul>
-
-    <div class="figure">
-      <img src="Result 1.png" alt="Result 1">
-      <p><strong>Figure 1:</strong> Enhanced repair kinetics at snap loci indicated by faster RecA resolution and improved survival.</p>
+    <div class="two-column">
+      <div>
+        <ul>
+          <li>Site-specific DSBs induced via I-SceI at <i>gln</i> (snap) and <i>dnaB</i> (non-snap).</li>
+          <li>Cell survival tracked using CFU assays.</li>
+          <li>RecA-GFP monitored using time-lapse microscopy.</li>
+        </ul>
+      </div>
+      <div class="figure">
+        <img src="Result 1.png" alt="Result 1">
+        <p><strong>Figure 1:</strong> Snap loci exhibit faster repair kinetics and greater survival than non-snap loci.</p>
+      </div>
     </div>
+
+    <h2>Key Results</h2>
+    <ul>
+      <li><strong>Higher survival</strong> at snap locus (<i>gln</i>) vs. non-snap locus (<i>dnaB</i>).</li>
+      <li>Loss of SeqA eliminates repair advantage, confirming its role in cohesion.</li>
+      <li>Time-lapse shows faster RecA-GFP resolution at snap loci.</li>
+      <li>RecA filaments at snap loci are brighter, longer, and more stable.</li>
+    </ul>
 
     <div class="figure">
       <img src="Result 2.png" alt="Result 2">
-      <p><strong>Figure 2:</strong> Time-lapse imaging of RecA filament dynamics post DSB induction. Snap loci support rapid filament resolution; non-snap loci show delayed RecA clearance and fragmented filament structures.</p>
+      <p><strong>Figure 2:</strong> Time-lapse dynamics of RecA filament formation and resolution show enhanced speed at snap loci.</p>
     </div>
 
     <div class="figure">
       <img src="Result 3.png" alt="Result 3">
-      <p><strong>Figure 3:</strong> Fluorescent micrographs show stronger, extended RecA filaments at <i>gln</i> compared to compact foci at <i>dnaB</i>, confirming spatial differences in filament stability and repair efficiency.</p>
+      <p><strong>Figure 3:</strong> Representative images of RecA filaments. Snap loci show continuous, elongated filaments vs. fragmented structures at non-snap loci.</p>
     </div>
 
     <div class="figure">
       <img src="Result 4.png" alt="Result 4">
-      <p><strong>Figure 4:</strong> Schematic model summarizing how SeqA-mediated chromatid cohesion promotes efficient homology search and faithful HR-based DSB repair at snap loci.</p>
+      <p><strong>Figure 4:</strong> Schematic model showing SeqA’s role in maintaining cohesion to enhance repair fidelity through spatial homology alignment.</p>
+    </div>
+
+    <div class="quote-block">
+      “Snap loci act as spatial anchors, ensuring chromosomal symmetry and high-fidelity repair through SeqA-mediated cohesion.”
     </div>
 
     <div class="back-button">
