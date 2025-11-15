@@ -5,187 +5,272 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dr. Deepak K. Singh</title>
   <style>
+    :root {
+      --bg: #f5f5f7;
+      --card-bg: #ffffff;
+      --text: #111111;
+      --muted: #555555;
+      --accent: #0059c8;
+      --border: #e0e0e0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Georgia, serif;
-      background-color: #ffffff;
-      color: #111;
       margin: 0;
       padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
+
+    /* HEADER / HERO */
     header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 1000;
       text-align: center;
-      padding: 60px 20px 20px;
-      background: url('my_plot.png') no-repeat center center;
-      background-size: cover;
-      position: relative;
+      padding: 60px 20px 30px;
+      background: linear-gradient(135deg, #f8fbff, #eef2ff);
+      border-bottom: 1px solid var(--border);
     }
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.5); /* Light blur effect */
-      backdrop-filter: blur(8px);
-      z-index: 1;
+
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
     }
-    header * {
-      position: relative;
-      z-index: 2;
+
+    @media (min-width: 768px) {
+      .hero-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+      }
     }
+
     header img {
       width: 180px;
       height: 220px;
-      border-radius: 50%;
+      border-radius: 18px;
       object-fit: cover;
-      margin-bottom: 15px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Depth effect */
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      flex-shrink: 0;
     }
+
+    .hero-text {
+      max-width: 520px;
+      text-align: center;
+    }
+
+    @media (min-width: 768px) {
+      .hero-text {
+        text-align: left;
+      }
+    }
+
     header h1 {
       font-size: 28px;
-      margin: 5px 0;
+      margin: 0 0 4px;
+      letter-spacing: 0.03em;
     }
-    header p {
+
+    header .role {
       font-size: 16px;
-      margin: 0;
+      margin: 0 0 8px;
+      font-weight: 500;
+      color: var(--muted);
     }
-    nav {
-      text-align: center;
-      padding: 10px 0;
+
+    header .tags {
+      font-size: 14px;
+      margin: 0 0 14px;
+      color: var(--muted);
     }
-    nav a {
-      margin: 0 15px;
+
+    .hero-actions {
+      margin-top: 8px;
+    }
+
+    .hero-actions a {
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      color: #ffffff;
+      background-color: var(--accent);
       text-decoration: none;
-      color: #0073e6;
-      font-weight: bold;
+      font-size: 14px;
+      font-weight: 500;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
     }
-    section {
-      padding-top: 280px;
-      max-width: 700px;
-      margin: 40px auto;
+
+    .hero-actions a:hover {
+      background-color: #004199;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 65, 153, 0.35);
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: #ffffffee;
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 8px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* MAIN / SECTIONS */
+    main {
+      max-width: 900px;
+      margin: 30px auto 60px;
       padding: 0 20px;
     }
+
+    section {
+      background-color: var(--card-bg);
+      padding: 22px 22px 10px;
+      margin-bottom: 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+      border: 1px solid var(--border);
+    }
+
     section h2 {
-      font-size: 20px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-      margin-bottom: 15px;
+      font-size: 18px;
+      margin-top: 0;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      font-weight: 600;
     }
-    footer {
-  text-align: center;
-  font-size: 14px;
-  padding: 0;
-  color: inherit;
-  background: none;
-}
+
+    section p {
+      margin: 0 0 10px;
+      font-size: 14px;
+    }
+
     ul {
-      padding-left: 20px;
+      margin: 0;
+      padding-left: 18px;
+      font-size: 14px;
     }
-      a.social-icon img {
-      transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
-      opacity: 0.8;
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    #publications li {
+      margin-bottom: 8px;
+    }
+
+    #publications a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    #publications a:hover {
+      text-decoration: underline;
+    }
+
+    #news ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    #news li {
+      margin-bottom: 8px;
+    }
+
+    #news strong {
+      font-size: 13px;
+      color: #333;
+    }
+
+    #news span {
+      font-size: 14px;
+    }
+
+    /* FOOTER & SOCIAL ICONS */
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 40px;
+    }
+
+    .social-row {
+      margin-top: 10px;
+      margin-bottom: 18px;
+    }
+
+    .social-icon {
+      margin: 0 8px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .social-icon img {
+      width: 42px;
+      height: 42px;
+      vertical-align: middle;
+      opacity: 0.85;
       filter: grayscale(100%);
+      transition: transform 0.25s ease, opacity 0.25s ease, filter 0.25s ease;
     }
-    a.social-icon:hover img {
-      transform: scale(1.2);
+
+    .social-icon:hover img {
+      transform: scale(1.12);
       opacity: 1;
       filter: grayscale(0%);
     }
-  </style>
-</head>
-<body>
-  <header>
-    <img src="deepak-profile.jpg" alt="Dr. Deepak K. Singh">
-    <h1>Dr. Deepak K. Singh</h1>
-    <p>Scientist, Micro CRISPR Pvt. Ltd.</p>
-    <p>Molecular Microbiology || Gene Therapy || Antimicrobial Resistance || Gut Microbiome</p>
-    <p><a href="DKS-CV.pdf" target="_blank">Curriculum Vitae</a></p>
-  </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Research</a>
-    <a href="#publications">Publications</a>
-    <a href="projects.html" target="_blank">Projects</a>
-    <a href="#news">News</a>
-  </nav>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am a dedicated researcher and scientist with a Ph.D. in Molecular Microbiology from Jamia Millia Islamia. Currently, I work as an Scientist in R&D at Micro CRISPR Pvt. Ltd., New Delhi. My focus lies in gene therapy, bacterial chromosome dynamics, and antimicrobial resistance. My research emphasizes DNA repair mechanisms, CRISPR diagnostics, and cell-based assays for translational microbiology.</p>
-  </section>
-
-  <section id="education">
-    <h2>Education</h2>
-    <ul>
-      <li>Ph.D. Molecular Microbiology, Jamia Millia Islamia (2017–2024)</li>
-      <li>M.Sc. Biotechnology, C.S.J.M. University (2012–2014)</li>
-      <li>B.Sc. Biotechnology, C.S.J.M. University (2009–2012)</li>
-    </ul>
-  </section>
-
-  <section id="experience">
-    <h2>Research Experience</h2>
-    <ul>
-      <li>Scientist, Micro CRISPR Pvt. Ltd., New Delhi</li>
-      <li>Senior Research Fellow, MCARS, Jamia Millia Islamia (2019–2024)</li>
-      <li>JRF, ICAR-IVRI, Bareilly (2016–2017)</li>
-    </ul>
-  </section>
-
-  <section id="publications">
-    <h2>Publications</h2>
-    <ul>
-      <li>SeqA mediated cohesion modulates DNA repair in <i>E. coli</i> (Under revision, <i>Communication Biology</i>)</li>
-      <li>Loss of SeqA leads to abnormal cell phenotype in <i>E. coli</i> (<a href="http://dx.doi.org/10.51470/BCA.2024.24.1-S.3407">BCA, 2024</a>)</li>
-      <li>Gold nanoparticle exposure modulates ribosomal protein expression (<a href="https://pubs.acs.org/doi/10.1021/acsnano.3c01973">ACS NANO, 2023</a>)</li>
-      <li>Cas13a-based SARS-CoV-2 detection (<a href="https://doi.org/10.3389/fcimb.2021.632646">Frontiers, 2021</a>)</li>
-    </ul>
-  </section>
-
-  <section id="news">
-    <h2>News</h2>
-    <ul style="list-style: none; padding-left: 0;">
-      <li><strong>18 March 2025</strong> &mdash; Successfully defended Ph.D. final viva voce.</li>
-      <li><strong>29 November 2024</strong> &mdash; I had submitted my Ph.D. thesis.</li>
-    </ul>
-  </section>
-
-  <footer style="background: none; color: inherit;">
-<div style="margin-top: 20px; text-align: center;">
-  <style>
-    footer img {
-      vertical-align: middle;
+    .footer-bar {
+      background-color: #000;
+      color: #fff;
+      padding: 8px 0;
+      margin-top: 12px;
+      font-size: 13px;
     }
-  </style>
-  <a href="https://www.linkedin.com/in/deepak-singh-96671079/" target="_blank" class="social-icon" style="margin: 0 10px; text-decoration: none;">
-    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="50" height="50">
-  </a>
-  <a href="https://x.com/Rush_toDeep" target="_blank" class="social-icon" style="margin: 0 10px; text-decoration: none;">
-    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968958.png" alt="X (Twitter)" width="50" height="50">
-  </a>
-  <a href="https://scholar.google.com/citations?user=BtL_ucIAAAAJ&hl=en" target="_blank" class="social-icon" style="margin: 0 10px; text-decoration: none;">
-    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Google Scholar" width="50" height="50">
-  </a>
 
+    .footer-credit {
+      margin: 6px 0 14px;
+    }
 
-
-</div>
-<div style="background-color: #000; color: #fff; padding: 10px 0 10px; margin-top: 30px;">
-  <p style="margin: 0; font-size: 14px;">© 2025 Deepak Kumar Singh | All rights reserved</p>
-</div>
-  <p style="margin: 5px 0; font-size: 12px; ">Powered by HTML/CSS and hosted with <a href="https://pages.github.com" target="_blank" style="color: #bbb; text-decoration: underline;">GitHub Pages</a>. </p>
-</div>
-</footer>
-</body>
-</html>
+    .footer-credi
