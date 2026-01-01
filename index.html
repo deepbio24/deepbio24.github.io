@@ -1,190 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Deepak K. Singh</title>
+
   <style>
-    body {
-      font-family: Georgia, serif;
-      background-color: #ffffff;
-      color: #111;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
+    :root{
+      --bg:#f6f7fb;
+      --card:#ffffff;
+      --text:#111;
+      --muted:#5b5b5b;
+      --border:#e7e7ee;
+      --accent:#0b63ff;
+      --shadow: 0 14px 40px rgba(10,20,40,.12);
+      --shadow2: 0 10px 28px rgba(10,20,40,.10);
+      --radius: 18px;
     }
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 1000;
-      text-align: center;
-      padding: 60px 20px 20px;
-      background: url('my_plot.png') no-repeat center center;
-      background-size: cover;
-      position: relative;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Helvetica Neue", sans-serif;
+      line-height:1.55;
     }
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.5);
-      backdrop-filter: blur(8px);
-      z-index: 1;
+
+    /* HERO with your cover image */
+    header{
+      position:relative;
+      background: url('my_plot.png') center/cover no-repeat;
+      padding: 64px 18px 34px;
+      overflow:hidden;
     }
-    header * {
-      position: relative;
-      z-index: 2;
+    header::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: rgba(255,255,255,.62);
+      backdrop-filter: blur(10px);
     }
-    header img {
-      width: 180px;
-      height: 220px;
-      border-radius: 50%;
+    .hero{
+      position:relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      display:grid;
+      grid-template-columns: 170px 1fr;
+      gap: 22px;
+      align-items:center;
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: var(--radius);
+      padding: 22px 22px;
+      box-shadow: var(--shadow);
+    }
+    .hero img.profile{
+      width: 170px;
+      height: 210px;
       object-fit: cover;
-      margin-bottom: 15px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+      border-radius: 16px;
+      box-shadow: 0 12px 26px rgba(0,0,0,.18);
     }
-    header h1 {
-      font-size: 28px;
-      margin: 5px 0;
+    .hero h1{
+      margin:0;
+      font-size: 30px;
+      letter-spacing:.2px;
     }
-    header p {
-      font-size: 16px;
-      margin: 0;
-    }
-    nav {
-      text-align: center;
-      padding: 10px 0;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #0073e6;
-      font-weight: bold;
-    }
-    section {
-      padding-top: 280px;
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    section h2 {
-      font-size: 20px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-      margin-bottom: 15px;
-    }
-    footer {
-      text-align: center;
+    .hero .role{
+      margin:6px 0 6px;
+      color: var(--muted);
+      font-weight: 600;
       font-size: 14px;
-      padding: 0;
-      color: inherit;
-      background: none;
     }
-    ul {
-      padding-left: 20px;
+    .hero .one-liner{
+      margin:0 0 12px;
+      color:#222;
+      font-size: 15px;
+      max-width: 68ch;
     }
-    a.social-icon img {
-      transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
-      opacity: 0.8;
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+      margin: 10px 0 14px;
+    }
+    .chip{
+      font-size: 12px;
+      color:#1f2a44;
+      background: #edf3ff;
+      border: 1px solid #d8e6ff;
+      padding: 6px 10px;
+      border-radius: 999px;
+      user-select:none;
+    }
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border:1px solid var(--border);
+      background: #fff;
+      color:#111;
+      text-decoration:none;
+      font-weight:600;
+      font-size: 13px;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .btn.primary{
+      background: var(--accent);
+      border-color: var(--accent);
+      color:#fff;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      box-shadow: var(--shadow2);
+      border-color: rgba(11,99,255,.35);
+    }
+
+    /* MAIN */
+    main{
+      max-width: 1100px;
+      margin: 18px auto 70px;
+      padding: 0 18px;
+    }
+
+    /* NAV CARDS */
+    .tiles{
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 980px){ .tiles{grid-template-columns: repeat(3, 1fr);} }
+    @media (max-width: 680px){ .tiles{grid-template-columns: repeat(2, 1fr);} }
+    @media (max-width: 420px){
+      .tiles{grid-template-columns: 1fr;}
+      .hero{grid-template-columns:1fr; text-align:center}
+      .hero img.profile{margin:0 auto}
+      .chips,.actions{justify-content:center}
+    }
+
+    .tile{
+      position:relative;
+      background: rgba(255,255,255,.85);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 12px 12px;
+      cursor:pointer;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      box-shadow: 0 10px 26px rgba(10,20,40,.06);
+      min-height: 130px;
+      user-select:none;
+      overflow:hidden;
+    }
+    .tile::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: rgba(255,255,255,.30);
+      backdrop-filter: blur(10px);
+      opacity:0;
+      transition: opacity .18s ease;
+    }
+    .tile:hover{
+      transform: translateY(-3px);
+      box-shadow: 0 16px 34px rgba(10,20,40,.12);
+      border-color: rgba(11,99,255,.35);
+    }
+    .tile:hover::before{opacity:1}
+    .tile.active{
+      border-color: rgba(11,99,255,.55);
+      box-shadow: 0 18px 40px rgba(10,20,40,.14);
+    }
+
+    /* ICON FALLBACK (no icon png needed) */
+    .icon-fallback{
+      width:56px;
+      height:56px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      font-size:18px;
+      color: var(--accent);
+      background: rgba(11,99,255,.10);
+      border:1px solid rgba(11,99,255,.25);
+      margin-bottom:8px;
+      position:relative;
+      z-index:1;
+    }
+
+    .tile .title{
+      font-weight: 800;
+      font-size: 14px;
+      margin: 0;
+      position:relative;
+      z-index:1;
+    }
+    .tile .hint{
+      margin: 4px 0 0;
+      font-size: 12px;
+      color: var(--muted);
+      position:relative;
+      z-index:1;
+    }
+
+    /* CONTENT PANEL */
+    .panel{
+      margin-top: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 18px;
+      box-shadow: 0 12px 28px rgba(10,20,40,.08);
+    }
+    .panel h2{
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing:.2px;
+    }
+    .panel p{margin: 0 0 10px; color:#222}
+    .panel ul{margin: 0; padding-left: 18px}
+    .panel li{margin: 7px 0}
+    .panel a{color: var(--accent); text-decoration:none; font-weight:600}
+    .panel a:hover{text-decoration:underline}
+
+    /* Footer */
+    footer{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 18px 30px;
+      text-align:center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .social-row{margin-top: 12px}
+    a.social-icon img{
+      transition: transform .25s ease, opacity .25s ease, filter .25s ease;
+      opacity: .86;
       filter: grayscale(100%);
+      width: 44px; height: 44px;
+      margin: 0 8px;
     }
-    a.social-icon:hover img {
-      transform: scale(1.2);
+    a.social-icon:hover img{
+      transform: scale(1.12);
       opacity: 1;
       filter: grayscale(0%);
+    }
+    .footer-bar{
+      margin-top: 16px;
+      background:#000;
+      color:#fff;
+      padding: 10px 0;
+      border-radius: 12px;
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <img src="deepak-profile.jpg" alt="Dr. Deepak K. Singh">
-    <h1>Dr. Deepak K. Singh</h1>
-    <p>Scientist, Micro CRISPR Pvt. Ltd.</p>
-    <p>Molecular Microbiology || Gene Therapy || Antimicrobial Resistance || Gut Microbiome</p>
-    <p><a href="DKS-CV.pdf" target="_blank">Curriculum Vitae</a></p>
-  </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#education">Education</a>
-    <a href="#experience">Research</a>
-    <a href="#publications">Publications</a>
-    <a href="#updates">Updates & Blog</a>
-    <a href="projects.html" target="_blank">Projects</a>
-  </nav>
+<header>
+  <div class="hero">
+    <img class="profile" src="deepak-profile.jpg" alt="Dr. Deepak K. Singh" />
+    <div>
+      <h1>Dr. Deepak K. Singh</h1>
+      <div class="role">Scientist, Micro CRISPR Pvt. Ltd. · New Delhi</div>
+      <p class="one-liner">
+        Molecular microbiologist working at the intersection of bacterial chromosome regulation, CRISPR diagnostics,
+        antimicrobial resistance, and translational microbiology.
+      </p>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I am a dedicated researcher and scientist with a Ph.D. in Molecular Microbiology from Jamia Millia Islamia. Currently, I work as an Scientist in R&D at Micro CRISPR Pvt. Ltd., New Delhi. My focus lies in gene therapy, bacterial chromosome dynamics, and antimicrobial resistance. My research emphasizes DNA repair mechanisms, CRISPR diagnostics, and cell-based assays for translational microbiology.</p>
-  </section>
+      <div class="chips">
+        <span class="chip">Chromosome Dynamics</span>
+        <span class="chip">CRISPR Diagnostics</span>
+        <span class="chip">Antimicrobial Resistance</span>
+        <span class="chip">Gut Microbiome</span>
+      </div>
 
-  <section id="education">
-    <h2>Education</h2>
-    <ul>
-      <li>Ph.D. Molecular Microbiology, Jamia Millia Islamia (2017–2024)</li>
-      <li>M.Sc. Biotechnology, C.S.J.M. University (2012–2014)</li>
-      <li>B.Sc. Biotechnology, C.S.J.M. University (2009–2012)</li>
-    </ul>
-  </section>
+      <div class="actions">
+        <a class="btn primary" href="DKS-CV.pdf" target="_blank" rel="noopener">View CV</a>
+        <a class="btn" href="#panel" id="jump-panel">Explore Profile</a>
+      </div>
+    </div>
+  </div>
+</header>
 
-  <section id="experience">
-    <h2>Research Experience</h2>
-    <ul>
-      <li>Scientist, Micro CRISPR Pvt. Ltd., New Delhi</li>
-      <li>Senior Research Fellow, MCARS, Jamia Millia Islamia (2019–2024)</li>
-      <li>JRF, ICAR-IVRI, Bareilly (2016–2017)</li>
-    </ul>
-  </section>
-
-  <section id="publications">
-    <h2>Publications</h2>
-    <ul>
-      <li>Loss of SeqA confers low-level fluoroquinolone resistance through transcriptional reprogramming and RpoS dependence in <i>E. coli</i> (<a href="https://doi.org/10.3934/microbiol.2025047" target="_blank">AIMS Microbiology, 2025</a>)</li>
-      <li>SeqA mediated cohesion modulates DNA repair in <i>E. coli</i> (Under revision, <i>Communication Biology</i>)</li>
-      <li>Loss of SeqA leads to abnormal cell phenotype in <i>E. coli</i> (<a href="http://dx.doi.org/10.51470/BCA.2024.24.1-S.3407">BCA, 2024</a>)</li>
-      <li>Gold nanoparticle exposure modulates ribosomal protein expression (<a href="https://pubs.acs.org/doi/10.1021/acsnano.3c01973">ACS NANO, 2023</a>)</li>
-      <li>Cas13a-based SARS-CoV-2 detection (<a href="https://doi.org/10.3389/fcimb.2021.632646">Frontiers, 2021</a>)</li>
-    </ul>
-  </section>
-
-  <!-- ✅ UPDATED SECTION (Merged Blog + News) -->
-  <section id="updates">
-    <h2>Updates & Blog</h2>
-    <ul style="list-style: none; padding-left: 0;">
-      <li><strong>[Blog]</strong> My first blog coming soon!</li>
-      <li><strong>[News]</strong> 18 March 2025 — Successfully defended Ph.D. final viva voce.</li>
-      <li><strong>[News]</strong> 29 November 2024 — Submitted my Ph.D. thesis.</li>
-    </ul>
-  </section>
-  <!-- END -->
-
-  <footer>
-    <div style="margin-top: 20px; text-align: center;">
-      <a href="https://www.linkedin.com/in/deepak-singh-96671079/" target="_blank" class="social-icon">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="50" height="50">
-      </a>
-      <a href="https://x.com/Rush_toDeep" target="_blank" class="social-icon">
-        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968958.png" width="50" height="50">
-      </a>
-      <a href="https://scholar.google.com/citations?user=BtL_ucIAAAAJ&hl=en" target="_blank" class="social-icon">
-        <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" width="50" height="50">
-      </a>
+<main>
+  <!-- Tiles (no icon png files needed) -->
+  <div class="tiles" aria-label="Profile sections">
+    <div class="tile active" data-target="about" role="button" tabindex="0">
+      <div class="icon-fallback">A</div>
+      <p class="title">About</p>
+      <p class="hint">Quick overview</p>
     </div>
 
-    <div style="background-color: #000; color: #fff; padding: 10px 0; margin-top: 30px;">
-      <p style="margin: 0; font-size: 14px;">© 2025 Deepak Kumar Singh | All rights reserved</p>
+    <div class="tile" data-target="focus" role="button" tabindex="0">
+      <div class="icon-fallback">R</div>
+      <p class="title">Research Focus</p>
+      <p class="hint">What I work on</p>
     </div>
 
-    <p style="margin: 5px 0; font-size: 12px;">Powered by GitHub Pages.</p>
-  </footer>
+    <div class="tile" data-target="publications" role="button" tabindex="0">
+      <div class="icon-fallback">P</div>
+      <p class="title">Publications</p>
+      <p class="hint">Latest + selected</p>
+    </div>
+
+    <div class="tile" data-target="updates" role="button" tabindex="0">
+      <div class="icon-fallback">U</div>
+      <p class="title">Updates & Blog</p>
+      <p class="hint">News + writing</p>
+    </div>
+
+    <div class="tile" data-target="education" role="button" tabindex="0">
+      <div class="icon-fallback">E</div>
+      <p class="title">Education</p>
+      <p class="hint">Background</p>
+    </div>
+  </div>
+
+  <!-- Content Panel -->
+  <section id="panel" class="panel" aria-live="polite">
+    <div class="panel-section" id="about">
+      <h2>About</h2>
+      <p>
+        I am a researcher and scientist with a Ph.D. in Molecular Microbiology from Jamia Millia Islamia.
+        My work spans gene therapy, bacterial chromosome dynamics, and antimicrobial resistance, with emphasis on
+        DNA repair mechanisms, CRISPR diagnostics, and translational microbiology.
+      </p>
+    </div>
+
+    <div class="panel-section" id="focus" hidden>
+      <h2>Research Focus</h2>
+      <ul>
+        <li><b>Chromosome regulation:</b> replication initiation, cohesion, and stress responses in <i>E. coli</i>.</li>
+        <li><b>Antimicrobial resistance:</b> mechanisms and phenotypes under antibiotic pressure.</li>
+        <li><b>CRISPR diagnostics:</b> developing and validating CRISPR-based detection workflows.</li>
+        <li><b>Translational assays:</b> cell-based and molecular assays supporting applied microbiology.</li>
+      </ul>
+    </div>
+
+    <div class="panel-section" id="publications" hidden>
+      <h2>Publications (Selected)</h2>
+      <ul>
+        <li>
+          <b>AIMS Microbiology (2025)</b> — Loss of SeqA confers low-level fluoroquinolone resistance through transcriptional reprogramming and RpoS dependence in <i>E. coli</i>.
+          <a href="https://doi.org/10.3934/microbiol.2025047" target="_blank" rel="noopener">DOI</a>
+        </li>
+        <li>
+          Loss of SeqA leads to abnormal cell phenotype in <i>E. coli</i>.
+          <a href="https://doi.org/10.51470/BCA.2024.24.1-S.3407" target="_blank" rel="noopener">BCA, 2024</a>
+        </li>
+        <li>
+          Gold nanoparticle exposure modulates ribosomal protein expression.
+          <a href="https://pubs.acs.org/doi/10.1021/acsnano.3c01973" target="_blank" rel="noopener">ACS Nano, 2023</a>
+        </li>
+        <li>
+          Cas13a-based SARS-CoV-2 detection.
+          <a href="https://doi.org/10.3389/fcimb.2021.632646" target="_blank" rel="noopener">Frontiers, 2021</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="panel-section" id="updates" hidden>
+      <h2>Updates & Blog</h2>
+      <ul>
+        <li><b>[Blog]</b> My first blog coming soon!</li>
+        <li><b>[News]</b> Paper published in AIMS Microbiology (SeqA &amp; fluoroquinolone resistance).</li>
+        <li><b>[News]</b> 18 Mar 2025 — Successfully defended Ph.D. final viva voce.</li>
+        <li><b>[News]</b> 29 Nov 2024 — Submitted Ph.D. thesis.</li>
+      </ul>
+    </div>
+
+    <div class="panel-section" id="education" hidden>
+      <h2>Education</h2>
+      <ul>
+        <li>Ph.D. Molecular Microbiology, Jamia Millia Islamia (2017–2024)</li>
+        <li>M.Sc. Biotechnology, C.S.J.M. University (2012–2014)</li>
+        <li>B.Sc. Biotechnology, C.S.J.M. University (2009–2012)</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="social-row">
+    <a href="https://www.linkedin.com/in/deepak-singh-96671079/" target="_blank" class="social-icon" rel="noopener">
+      <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+    </a>
+    <a href="https://x.com/Rush_toDeep" target="_blank" class="social-icon" rel="noopener">
+      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968958.png" alt="X (Twitter)">
+    </a>
+    <a href="https://scholar.google.com/citations?user=BtL_ucIAAAAJ&hl=en" target="_blank" class="social-icon" rel="noopener">
+      <img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" alt="Google Scholar">
+    </a>
+  </div>
+
+  <div class="footer-bar">© 2025 Deepak Kumar Singh | All rights reserved</div>
+  <div style="margin-top:8px;">
+    Powered by HTML/CSS and hosted with <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>.
+  </div>
+</footer>
+
+<script>
+  const tiles = document.querySelectorAll('.tile');
+  const sections = document.querySelectorAll('.panel-section');
+  const panel = document.getElementById('panel');
+  const jump = document.getElementById('jump-panel');
+
+  function showSection(id){
+    sections.forEach(s => s.hidden = (s.id !== id));
+    tiles.forEach(t => t.classList.toggle('active', t.dataset.target === id));
+    panel.scrollIntoView({behavior: 'smooth', block: 'start'});
+  }
+
+  tiles.forEach(tile => {
+    tile.addEventListener('click', () => showSection(tile.dataset.target));
+    tile.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); showSection(tile.dataset.target); }
+    });
+  });
+
+  jump?.addEventListener('click', (e) => {
+    e.preventDefault();
+    panel.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+</script>
 
 </body>
 </html>
