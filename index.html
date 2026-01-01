@@ -27,7 +27,6 @@
       line-height:1.55;
     }
 
-    /* HERO with your cover image */
     header{
       position:relative;
       background: url('my_plot.png') center/cover no-repeat;
@@ -62,11 +61,7 @@
       border-radius: 16px;
       box-shadow: 0 12px 26px rgba(0,0,0,.18);
     }
-    .hero h1{
-      margin:0;
-      font-size: 30px;
-      letter-spacing:.2px;
-    }
+    .hero h1{margin:0;font-size:30px;letter-spacing:.2px;}
     .hero .role{
       margin:6px 0 6px;
       color: var(--muted);
@@ -79,12 +74,7 @@
       font-size: 15px;
       max-width: 68ch;
     }
-    .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 8px;
-      margin: 10px 0 14px;
-    }
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px;}
     .chip{
       font-size: 12px;
       color:#1f2a44;
@@ -94,11 +84,7 @@
       border-radius: 999px;
       user-select:none;
     }
-    .actions{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
+    .actions{display:flex;gap:10px;flex-wrap:wrap;}
     .btn{
       display:inline-flex;
       align-items:center;
@@ -124,17 +110,11 @@
       border-color: rgba(11,99,255,.35);
     }
 
-    /* MAIN */
-    main{
-      max-width: 1100px;
-      margin: 18px auto 70px;
-      padding: 0 18px;
-    }
+    main{max-width:1100px;margin:18px auto 70px;padding:0 18px;}
 
-    /* NAV CARDS */
     .tiles{
       display:grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 14px;
       margin-top: 16px;
     }
@@ -180,40 +160,18 @@
       box-shadow: 0 18px 40px rgba(10,20,40,.14);
     }
 
-    /* ICON FALLBACK (no icon png needed) */
     .icon-fallback{
-      width:56px;
-      height:56px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:800;
-      font-size:18px;
-      color: var(--accent);
+      width:56px;height:56px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;font-size:18px;color: var(--accent);
       background: rgba(11,99,255,.10);
       border:1px solid rgba(11,99,255,.25);
       margin-bottom:8px;
-      position:relative;
-      z-index:1;
+      position:relative;z-index:1;
     }
+    .tile .title{font-weight:800;font-size:14px;margin:0;position:relative;z-index:1;}
+    .tile .hint{margin:4px 0 0;font-size:12px;color:var(--muted);position:relative;z-index:1;}
 
-    .tile .title{
-      font-weight: 800;
-      font-size: 14px;
-      margin: 0;
-      position:relative;
-      z-index:1;
-    }
-    .tile .hint{
-      margin: 4px 0 0;
-      font-size: 12px;
-      color: var(--muted);
-      position:relative;
-      z-index:1;
-    }
-
-    /* CONTENT PANEL */
     .panel{
       margin-top: 14px;
       background: var(--card);
@@ -222,18 +180,13 @@
       padding: 18px 18px;
       box-shadow: 0 12px 28px rgba(10,20,40,.08);
     }
-    .panel h2{
-      margin: 0 0 10px;
-      font-size: 18px;
-      letter-spacing:.2px;
-    }
-    .panel p{margin: 0 0 10px; color:#222}
-    .panel ul{margin: 0; padding-left: 18px}
-    .panel li{margin: 7px 0}
+    .panel h2{margin:0 0 10px;font-size:18px;letter-spacing:.2px;}
+    .panel p{margin:0 0 10px;color:#222}
+    .panel ul{margin:0;padding-left:18px}
+    .panel li{margin:7px 0}
     .panel a{color: var(--accent); text-decoration:none; font-weight:600}
     .panel a:hover{text-decoration:underline}
 
-    /* Footer */
     footer{
       max-width: 1100px;
       margin: 0 auto;
@@ -294,7 +247,7 @@
 </header>
 
 <main>
-  <!-- Tiles (no icon png files needed) -->
+  <!-- Tiles (Projects opens projects.html) -->
   <div class="tiles" aria-label="Profile sections">
     <div class="tile active" data-target="about" role="button" tabindex="0">
       <div class="icon-fallback">A</div>
@@ -325,9 +278,15 @@
       <p class="title">Education</p>
       <p class="hint">Background</p>
     </div>
+
+    <!-- Projects: opens new page -->
+    <a class="tile" href="projects.html" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
+      <div class="icon-fallback">Pr</div>
+      <p class="title">Projects</p>
+      <p class="hint">See all work</p>
+    </a>
   </div>
 
-  <!-- Content Panel -->
   <section id="panel" class="panel" aria-live="polite">
     <div class="panel-section" id="about">
       <h2>About</h2>
@@ -374,7 +333,7 @@
       <h2>Updates & Blog</h2>
       <ul>
         <li><b>[Blog]</b> My first blog coming soon!</li>
-        <li><b>[News]</b> 24 Dec 2025 - New Publication in AIMS Microbiology (SeqA &amp; fluoroquinolone resistance).</li>
+        <li><b>[News]</b> 24 Dec 2025 - Paper published in AIMS Microbiology (SeqA &amp; fluoroquinolone resistance).</li>
         <li><b>[News]</b> 18 Mar 2025 — Successfully defended Ph.D. final viva voce.</li>
         <li><b>[News]</b> 29 Nov 2024 — Submitted Ph.D. thesis.</li>
       </ul>
@@ -411,7 +370,7 @@
 </footer>
 
 <script>
-  const tiles = document.querySelectorAll('.tile');
+  const tiles = document.querySelectorAll('.tile[data-target]');
   const sections = document.querySelectorAll('.panel-section');
   const panel = document.getElementById('panel');
   const jump = document.getElementById('jump-panel');
